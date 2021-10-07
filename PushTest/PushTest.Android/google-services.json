@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "74386206404",
+    "project_id": "wicmobile-73328",
+    "storage_bucket": "wicmobile-73328.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74386206404:android:e66e8b8206ff546c71e391",
+        "android_client_info": {
+          "package_name": "com.companyname.pushtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "74386206404-udgduo5iiv6oc5751b1ipllnqrs5g078.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlbdtU7SE7VggVHW6jjU7NkSOCqlef2H8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "74386206404-udgduo5iiv6oc5751b1ipllnqrs5g078.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
