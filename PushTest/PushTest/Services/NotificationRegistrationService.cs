@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using PushTest.Models;
 using Xamarin.Essentials;
+using System.IO;
+using System.Net;
 
 namespace PushTest.Services
 {
@@ -100,14 +102,49 @@ namespace PushTest.Services
             string jsonRequest = null)
         {
             var request = new HttpRequestMessage(requestType, new Uri($"{_baseApiUrl}{requestUri}"));
-
             if (jsonRequest != null)
                 request.Content = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
 
-            var response = await _client.SendAsync(request).ConfigureAwait(false);
+            //_client.BaseAddress = new Uri("http://192.168.0.104:52353");
+            //_client.BaseAddress = new Uri("http://10.0.2.2:52353");
+            //var content = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
+            //string rUri = $"/{requestUri}";
+            //HttpResponseMessage response = await _client.PutAsync(rUri, content);
+            //var result = await response.Content.ReadAsStringAsync();
 
+            var response = await _client.SendAsync(request).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
         }
+
+        //private void RegisterOrUpdateDevice<T>(string endpoint, T obj)
+        //{
+        //    try
+        //    {
+        //        var jsonResult = "";
+        //        WebRequest oRequest = WebRequest.Create(endpoint);
+        //        oRequest.Method = "PUT";
+        //        oRequest.ContentType = "application/json";
+        //        using (var oSW = new StreamWriter(oRequest.GetRequestStream()))
+        //        {
+        //            string jsonRequest = JsonConvert.SerializeObject(obj);
+        //            oSW.Write(jsonRequest);
+        //            oSW.Flush();
+        //            oSW.Close();
+        //        }
+        //        //oRequest.Headers.Add("Authorization", "Bearer " + token);
+        //        WebResponse oResponse = oRequest.GetResponse();
+        //        using (var oSR = new StreamReader(oResponse.GetResponseStream()))
+        //        {
+        //            jsonResult = oSR.ReadToEnd().Trim();
+        //            var res = JsonConvert.DeserializeObject(jsonResult);
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        throw;
+        //    }
+
+        ////}
     }
 }
 
